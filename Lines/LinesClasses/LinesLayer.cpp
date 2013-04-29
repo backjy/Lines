@@ -229,6 +229,8 @@ void LinesLayer::LL_doAddLinesSprite(){
             LL_gameOver();
         }
         
+//        code
+        
         LinesSprite * sprite = LinesSprite::create();
         
         sprite->initWith(dataHandle->LD_convertIndexToLinesProperty(_index),
