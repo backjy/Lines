@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2DBC0D8D172BB97900DBF2B1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBC0D8C172BB97900DBF2B1 /* Default-568h@2x.png */; };
+		2DBC0D96172BBA3B00DBF2B1 /* chess0.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBC0D8F172BBA3B00DBF2B1 /* chess0.png */; };
+		2DBC0D97172BBA3B00DBF2B1 /* chess1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBC0D90172BBA3B00DBF2B1 /* chess1.png */; };
+		2DBC0D98172BBA3B00DBF2B1 /* chess2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBC0D91172BBA3B00DBF2B1 /* chess2.png */; };
+		2DBC0D99172BBA3B00DBF2B1 /* chess3.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBC0D92172BBA3B00DBF2B1 /* chess3.png */; };
+		2DBC0D9A172BBA3B00DBF2B1 /* chess4.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBC0D93172BBA3B00DBF2B1 /* chess4.png */; };
+		2DBC0D9B172BBA3B00DBF2B1 /* chess5.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBC0D94172BBA3B00DBF2B1 /* chess5.png */; };
+		2DBC0D9C172BBA3B00DBF2B1 /* chess6.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBC0D95172BBA3B00DBF2B1 /* chess6.png */; };
+		2DBC0D9E172BBEA100DBF2B1 /* boardtest.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBC0D9D172BBEA100DBF2B1 /* boardtest.png */; };
+		2DBC0DA0172BBF6A00DBF2B1 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 2DBC0D9F172BBF6A00DBF2B1 /* background.png */; };
+		2DBC0DA3172BCE4300DBF2B1 /* LinesSprite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DBC0DA1172BCE4300DBF2B1 /* LinesSprite.cpp */; };
 		2DBF8E1D172A16AF00236B1F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DBF8E1C172A16AF00236B1F /* QuartzCore.framework */; };
 		2DBF8E1F172A16AF00236B1F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DBF8E1E172A16AF00236B1F /* OpenGLES.framework */; };
 		2DBF8E21172A16AF00236B1F /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DBF8E20172A16AF00236B1F /* OpenAL.framework */; };
@@ -210,9 +221,23 @@
 		2DBF90D3172A16B200236B1F /* cocos2dx-ext_public.defines.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2DBF90D2172A16B200236B1F /* cocos2dx-ext_public.defines.txt */; };
 		2DBF90D9172A16B200236B1F /* AppDelegate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF90D8172A16B200236B1F /* AppDelegate.cpp */; };
 		2DBF90DC172A16B200236B1F /* HelloWorldScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF90DB172A16B200236B1F /* HelloWorldScene.cpp */; };
+		2DBF90E6172A173800236B1F /* LinesDateHandle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF90E4172A173800236B1F /* LinesDateHandle.cpp */; };
+		2DBF90E9172A174C00236B1F /* LinesLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2DBF90E7172A174C00236B1F /* LinesLayer.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2DBC0D8C172BB97900DBF2B1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		2DBC0D8F172BBA3B00DBF2B1 /* chess0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chess0.png; sourceTree = "<group>"; };
+		2DBC0D90172BBA3B00DBF2B1 /* chess1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chess1.png; sourceTree = "<group>"; };
+		2DBC0D91172BBA3B00DBF2B1 /* chess2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chess2.png; sourceTree = "<group>"; };
+		2DBC0D92172BBA3B00DBF2B1 /* chess3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chess3.png; sourceTree = "<group>"; };
+		2DBC0D93172BBA3B00DBF2B1 /* chess4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chess4.png; sourceTree = "<group>"; };
+		2DBC0D94172BBA3B00DBF2B1 /* chess5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chess5.png; sourceTree = "<group>"; };
+		2DBC0D95172BBA3B00DBF2B1 /* chess6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chess6.png; sourceTree = "<group>"; };
+		2DBC0D9D172BBEA100DBF2B1 /* boardtest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boardtest.png; sourceTree = "<group>"; };
+		2DBC0D9F172BBF6A00DBF2B1 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
+		2DBC0DA1172BCE4300DBF2B1 /* LinesSprite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LinesSprite.cpp; sourceTree = "<group>"; };
+		2DBC0DA2172BCE4300DBF2B1 /* LinesSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinesSprite.h; sourceTree = "<group>"; };
 		2DBF8E19172A16AF00236B1F /* Lines.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lines.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DBF8E1C172A16AF00236B1F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		2DBF8E1E172A16AF00236B1F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -660,6 +685,11 @@
 		2DBF90D8172A16B200236B1F /* AppDelegate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = AppDelegate.cpp; path = Classes/AppDelegate.cpp; sourceTree = "<group>"; };
 		2DBF90DA172A16B200236B1F /* HelloWorldScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = HelloWorldScene.h; path = Classes/HelloWorldScene.h; sourceTree = "<group>"; };
 		2DBF90DB172A16B200236B1F /* HelloWorldScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorldScene.cpp; path = Classes/HelloWorldScene.cpp; sourceTree = "<group>"; };
+		2DBF90E3172A172400236B1F /* LinesConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinesConfig.h; sourceTree = "<group>"; };
+		2DBF90E4172A173800236B1F /* LinesDateHandle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LinesDateHandle.cpp; sourceTree = "<group>"; };
+		2DBF90E5172A173800236B1F /* LinesDateHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinesDateHandle.h; sourceTree = "<group>"; };
+		2DBF90E7172A174C00236B1F /* LinesLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = LinesLayer.cpp; sourceTree = "<group>"; };
+		2DBF90E8172A174C00236B1F /* LinesLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LinesLayer.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -682,9 +712,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2DBC0D8E172BBA3B00DBF2B1 /* LinesImageResource */ = {
+			isa = PBXGroup;
+			children = (
+				2DBC0D9F172BBF6A00DBF2B1 /* background.png */,
+				2DBC0D9D172BBEA100DBF2B1 /* boardtest.png */,
+				2DBC0D8F172BBA3B00DBF2B1 /* chess0.png */,
+				2DBC0D90172BBA3B00DBF2B1 /* chess1.png */,
+				2DBC0D91172BBA3B00DBF2B1 /* chess2.png */,
+				2DBC0D92172BBA3B00DBF2B1 /* chess3.png */,
+				2DBC0D93172BBA3B00DBF2B1 /* chess4.png */,
+				2DBC0D94172BBA3B00DBF2B1 /* chess5.png */,
+				2DBC0D95172BBA3B00DBF2B1 /* chess6.png */,
+			);
+			path = LinesImageResource;
+			sourceTree = "<group>";
+		};
 		2DBF8E10172A16AF00236B1F = {
 			isa = PBXGroup;
 			children = (
+				2DBC0D8C172BB97900DBF2B1 /* Default-568h@2x.png */,
 				2DBF8E2C172A16AF00236B1F /* Lines */,
 				2DBF8E1B172A16AF00236B1F /* Frameworks */,
 				2DBF8E1A172A16AF00236B1F /* Products */,
@@ -717,6 +764,8 @@
 		2DBF8E2C172A16AF00236B1F /* Lines */ = {
 			isa = PBXGroup;
 			children = (
+				2DBC0D8E172BBA3B00DBF2B1 /* LinesImageResource */,
+				2DBF90E2172A16E000236B1F /* LinesClasses */,
 				2DBF8E2D172A16AF00236B1F /* Resources */,
 				2DBF8E45172A16AF00236B1F /* ios */,
 				2DBF8E4E172A16AF00236B1F /* libs */,
@@ -1599,6 +1648,20 @@
 			name = Classes;
 			sourceTree = "<group>";
 		};
+		2DBF90E2172A16E000236B1F /* LinesClasses */ = {
+			isa = PBXGroup;
+			children = (
+				2DBF90E3172A172400236B1F /* LinesConfig.h */,
+				2DBF90E4172A173800236B1F /* LinesDateHandle.cpp */,
+				2DBF90E5172A173800236B1F /* LinesDateHandle.h */,
+				2DBF90E7172A174C00236B1F /* LinesLayer.cpp */,
+				2DBF90E8172A174C00236B1F /* LinesLayer.h */,
+				2DBC0DA1172BCE4300DBF2B1 /* LinesSprite.cpp */,
+				2DBC0DA2172BCE4300DBF2B1 /* LinesSprite.h */,
+			);
+			path = LinesClasses;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1663,6 +1726,16 @@
 				2DBF8EDC172A16B000236B1F /* ChangeLog in Resources */,
 				2DBF90D1172A16B200236B1F /* cocos2dx-ext.mkf in Resources */,
 				2DBF90D3172A16B200236B1F /* cocos2dx-ext_public.defines.txt in Resources */,
+				2DBC0D8D172BB97900DBF2B1 /* Default-568h@2x.png in Resources */,
+				2DBC0D96172BBA3B00DBF2B1 /* chess0.png in Resources */,
+				2DBC0D97172BBA3B00DBF2B1 /* chess1.png in Resources */,
+				2DBC0D98172BBA3B00DBF2B1 /* chess2.png in Resources */,
+				2DBC0D99172BBA3B00DBF2B1 /* chess3.png in Resources */,
+				2DBC0D9A172BBA3B00DBF2B1 /* chess4.png in Resources */,
+				2DBC0D9B172BBA3B00DBF2B1 /* chess5.png in Resources */,
+				2DBC0D9C172BBA3B00DBF2B1 /* chess6.png in Resources */,
+				2DBC0D9E172BBEA100DBF2B1 /* boardtest.png in Resources */,
+				2DBC0DA0172BBF6A00DBF2B1 /* background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1853,6 +1926,9 @@
 				2DBF90CD172A16B200236B1F /* CCPhysicsSprite.cpp in Sources */,
 				2DBF90D9172A16B200236B1F /* AppDelegate.cpp in Sources */,
 				2DBF90DC172A16B200236B1F /* HelloWorldScene.cpp in Sources */,
+				2DBF90E6172A173800236B1F /* LinesDateHandle.cpp in Sources */,
+				2DBF90E9172A174C00236B1F /* LinesLayer.cpp in Sources */,
+				2DBC0DA3172BCE4300DBF2B1 /* LinesSprite.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1986,6 +2062,7 @@
 				2DBF90E1172A16B200236B1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

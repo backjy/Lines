@@ -1,6 +1,9 @@
 #include "HelloWorldScene.h"
 #include "SimpleAudioEngine.h"
 
+#include "LinesConfig.h"
+#include "LinesLayer.h"
+
 using namespace cocos2d;
 using namespace CocosDenshion;
 
@@ -9,12 +12,15 @@ CCScene* HelloWorld::scene()
     // 'scene' is an autorelease object
     CCScene *scene = CCScene::create();
     
+    
     // 'layer' is an autorelease object
-    HelloWorld *layer = HelloWorld::create();
-
+//    HelloWorld *layer = HelloWorld::create();
+    LinesLayer * layer = LinesLayer::create();
+    layer->setPosition(ccp(0,100));
+    layer->LL_startGame();
     // add layer as a child to scene
     scene->addChild(layer);
-
+//    LinesProperty pro;
     // return the scene
     return scene;
 }
