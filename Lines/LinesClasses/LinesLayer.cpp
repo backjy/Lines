@@ -184,14 +184,22 @@ void LinesLayer::LL_doCheckMoveAndSoON(const LinesProperty &start){
 
 void LinesLayer::LinesSpriteMoveEndDoCheck(){
     
-    if(dataHandle->LD_calcDisappear(currentSelectSprite->type,
-                                    currentSelectSprite->s_property) > 1){
+    int count = dataHandle->LD_calcDisappear(currentSelectSprite->type,
+                                             currentSelectSprite->s_property);
+    if(count>1){
     
         LL_clearupUnusedSprite();
         dataHandle->LD_ShowDebug();
+        totalscore += count;
+        
+        CCString * str = CCString::createWithFormat("Score:%04d",totalscore);
+        std::string s = str->getCString();
+        scoreLabel->setString(s.c_str());
+        
+    }else{
+       LL_doAddLinesSprite(); 
     }
     
-    LL_doAddLinesSprite();
     ll_canDoCheck = true;
 }
 
@@ -212,7 +220,7 @@ void LinesLayer::LL_clearupUnusedSprite(){
         if (_value==0) {
             
             _sprite->LS_disappear();
-//            printf("%d-%d ",_index,_value);
+            printf("%d-%d ",_index,_value);
         }
         printf("%d,%d:%d-%d ",_sprite->s_property.x,_sprite->s_property.y,_index,_value);
     }
@@ -251,7 +259,7 @@ void LinesLayer::LL_doAddLinesSprite(){
 //    dataHandle->LD_ShowDebug();
 //     ---------------------------------
     
-    CCString * str = CCString::createWithFormat("O:%d T:%d T:%d",
+    CCString * str = CCString::createWithFormat("Next->O:%d T:%d T:%d",
                                                 nextTypeArray[0],nextTypeArray[1],nextTypeArray[2]);
     std::string s = str->getCString();
     
@@ -265,6 +273,8 @@ void LinesLayer::LL_startGame(){
         delete dataHandle;
         dataHandle = NULL;
     }
+    
+    totalscore = 0;
     
     dataHandle = new LinesDataHandle();
     
@@ -291,7 +301,7 @@ void LinesLayer::LL_startGame(){
     nextTypeArray[1] = arc4random() % 7;
     nextTypeArray[2] = arc4random() % 7;
     
-    CCString * str = CCString::createWithFormat("O:%d T:%d T:%d",
+    CCString * str = CCString::createWithFormat("Next->O:%d T:%d T:%d",
                                                  nextTypeArray[0],nextTypeArray[1],nextTypeArray[2]);
     std::string s = str->getCString();
     
@@ -301,6 +311,11 @@ void LinesLayer::LL_startGame(){
     nextLabel->setAnchorPoint(ccp(0, 0));
     this->addChild(nextLabel);
     
+    scoreLabel = CCLabelTTF::create("Score:0000", "Thonburi", 24);
+    scoreLabel->setPosition(ccp(width * 5, height * 10));
+    scoreLabel->setAnchorPoint(ccp(0, 0));
+    
+    this->addChild(scoreLabel);
 //    nextLabel->retain();
 
     

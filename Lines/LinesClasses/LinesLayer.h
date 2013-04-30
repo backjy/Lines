@@ -26,6 +26,7 @@ class LinesLayer :public CCLayer {
     CCNode * linesSpriteParent;
     
     CCLabelTTF * nextLabel;
+    CCLabelTTF * scoreLabel;
     
     float width;
     float height;
@@ -33,6 +34,8 @@ class LinesLayer :public CCLayer {
     bool ll_canDoCheck;
     
     int * nextTypeArray;
+    
+    int totalscore;
     
 public:
     virtual bool init(void);

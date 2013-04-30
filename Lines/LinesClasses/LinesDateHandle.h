@@ -54,7 +54,7 @@ public:
     
     inline int LD_getIndexWith(int _x,int _y){
         int _index = _y * total_x + _x;
-        printf("%d ",_index);
+//        printf("%d ",_index);
         if (_index<0 || _index>=total_count) {
             return -1;
         }

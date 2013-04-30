@@ -55,7 +55,7 @@ int LinesDataHandle::LD_calcDisappear(int _type, const LinesProperty &start){
     for (int i = 1; i < 5; i++) {
         
         int _y = y-i;
-        if (_y > 0) {
+        if (_y < 0) {
             break;
         }
         int _index = LD_getIndexWith(x, _y);
@@ -67,7 +67,7 @@ int LinesDataHandle::LD_calcDisappear(int _type, const LinesProperty &start){
     }
     
 // check leftright
-    printf("\t");
+//    printf("\t");
     std::list<int> leftRightList;
     
     for (int i = 1; i < 5; i++) {
@@ -98,7 +98,7 @@ int LinesDataHandle::LD_calcDisappear(int _type, const LinesProperty &start){
     }
     
 //    check leftup->rightdown
-    printf("\t");
+//    printf("\t");
 
     std::list<int> leftupTorightdownlist;
     
@@ -133,7 +133,7 @@ int LinesDataHandle::LD_calcDisappear(int _type, const LinesProperty &start){
     
 //    check leftdown->rightup
     
-    printf("\t");
+//    printf("\t");
 
     std::list<int> leftdownTorightup;
     
@@ -168,58 +168,66 @@ int LinesDataHandle::LD_calcDisappear(int _type, const LinesProperty &start){
     }
     
     
-    printf("\n===================================\n");
+//    printf("\n===================================\n");
     int count = 1;
-    CCLOG("upDownList:%d",upDownList.size());
+//    CCLOG("upDownList:%d",upDownList.size());
     if (upDownList.size() >= 4) {
         count += 4;
-        printf("start:");
+//        printf("start:");
         std::list<int>::iterator theIterator;
         for (theIterator = upDownList.begin(); theIterator != upDownList.end(); theIterator++) {
             LD_resetStateAtIndex(*theIterator, 0);
-            printf("%d ",*theIterator);
+//            printf("%d ",*theIterator);
         }
-        printf("\n");
+//        printf("\n");
         upDownList.clear();
     }
-    CCLOG("leftRightList:%d",leftRightList.size());
+    
+    
+//    CCLOG("leftRightList:%d",leftRightList.size());
     if (leftRightList.size() >= 4) {
         count += 4;
-        printf("start:");
+//        printf("start:");
         std::list<int>::iterator theIterator;
         for (theIterator = leftRightList.begin(); theIterator != leftRightList.end(); theIterator++) {
             LD_resetStateAtIndex(*theIterator, 0);
-            printf("%d ",*theIterator);
+//            printf("%d ",*theIterator);
         }
-        printf("\n");
+//        printf("\n");
         leftRightList.clear();
     }
-    CCLOG("leftup->rightdownlist:%d",leftupTorightdownlist.size());
+    
+    
+//    CCLOG("leftup->rightdownlist:%d",leftupTorightdownlist.size());
     if (leftupTorightdownlist.size() >= 4) {
         count += 4;
-        printf("start:");
+//        printf("start:");
         std::list<int>::iterator theIterator;
         for (theIterator = leftupTorightdownlist.begin(); theIterator != leftupTorightdownlist.end();
              theIterator++) {
             LD_resetStateAtIndex(*theIterator, 0);
-            printf("%d ",*theIterator);
+//            printf("%d ",*theIterator);
         }
-        printf("\n");
+//        printf("\n");
         leftupTorightdownlist.clear();
     }
-    CCLOG("leftDown->RightUplist:%d",leftdownTorightup.size());
+    
+    
+//    CCLOG("leftDown->RightUplist:%d",leftdownTorightup.size());
     if (leftdownTorightup.size() >= 4) {
         count +=4;
-        printf("start:");
+//        printf("start:");
         std::list<int>::iterator theIterator;
         for (theIterator = leftdownTorightup.begin(); theIterator != leftdownTorightup.end();
              theIterator++) {
             LD_resetStateAtIndex(*theIterator, 0);
-            printf("%d ",*theIterator);
+//            printf("%d ",*theIterator);
         }
-        printf("\n");
+//        printf("\n");
         leftdownTorightup.clear();
     }
+    
+    
     if (count>1) {
         LD_resetStateAtIndex(index, 0);
     }
