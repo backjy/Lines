@@ -59,7 +59,7 @@ int LinesDataHandle::LD_calcDisappear(int _type, const LinesProperty &start){
             break;
         }
         int _index = LD_getIndexWith(x, _y);
-        if ( _index > 0 &&
+        if ( _index >= 0 &&
             LD_getStateAtIndex(_index) == _type) {
             upDownList.push_back(_index);
         }else
@@ -77,7 +77,7 @@ int LinesDataHandle::LD_calcDisappear(int _type, const LinesProperty &start){
             break;
         }
         int _index = LD_getIndexWith(_x, y);
-        if (_index > 0 &&
+        if (_index >= 0 &&
             LD_getStateAtIndex(_index) == _type) {
             leftRightList.push_back(_index);
         }else
@@ -90,7 +90,7 @@ int LinesDataHandle::LD_calcDisappear(int _type, const LinesProperty &start){
             break;
         }
         int _index = LD_getIndexWith(_x, y);
-        if ( _index > 0 &&
+        if ( _index >= 0 &&
             LD_getStateAtIndex(_index) == _type) {
             leftRightList.push_back(_index);
         }else
@@ -110,7 +110,7 @@ int LinesDataHandle::LD_calcDisappear(int _type, const LinesProperty &start){
             break;
         }
         int _index = LD_getIndexWith(_x, _y);
-        if (_index > 0 &&
+        if (_index >= 0 &&
             LD_getStateAtIndex(_index) == _type) {
             leftupTorightdownlist.push_back(_index);
         }else
@@ -124,7 +124,7 @@ int LinesDataHandle::LD_calcDisappear(int _type, const LinesProperty &start){
             break;
         }
         int _index = LD_getIndexWith(_x, _y);
-        if (_index > 0 &&
+        if (_index >= 0 &&
             LD_getStateAtIndex(_index) == _type) {
             leftupTorightdownlist.push_back(_index);
         }else
@@ -145,7 +145,7 @@ int LinesDataHandle::LD_calcDisappear(int _type, const LinesProperty &start){
             break;
         }
         int _index = LD_getIndexWith(_x, _y);
-        if (_index >0 &&
+        if (_index >=0 &&
             LD_getStateAtIndex(_index) == _type) {
             leftdownTorightup.push_back(_index);
         }else
@@ -160,7 +160,7 @@ int LinesDataHandle::LD_calcDisappear(int _type, const LinesProperty &start){
             break;
         }        
         int _index = LD_getIndexWith(_x, _y);
-        if (_index >0 &&
+        if (_index >=0 &&
             LD_getStateAtIndex(_index) == _type) {
             leftdownTorightup.push_back(_index);
         }else
@@ -173,13 +173,13 @@ int LinesDataHandle::LD_calcDisappear(int _type, const LinesProperty &start){
 //    CCLOG("upDownList:%d",upDownList.size());
     if (upDownList.size() >= 4) {
         count += 4;
-//        printf("start:");
+        printf("start upDown:");
         std::list<int>::iterator theIterator;
         for (theIterator = upDownList.begin(); theIterator != upDownList.end(); theIterator++) {
             LD_resetStateAtIndex(*theIterator, 0);
-//            printf("%d ",*theIterator);
+            printf("%d ",*theIterator);
         }
-//        printf("\n");
+        printf("\n");
         upDownList.clear();
     }
     
@@ -187,13 +187,13 @@ int LinesDataHandle::LD_calcDisappear(int _type, const LinesProperty &start){
 //    CCLOG("leftRightList:%d",leftRightList.size());
     if (leftRightList.size() >= 4) {
         count += 4;
-//        printf("start:");
+        printf("start leftRight:");
         std::list<int>::iterator theIterator;
         for (theIterator = leftRightList.begin(); theIterator != leftRightList.end(); theIterator++) {
             LD_resetStateAtIndex(*theIterator, 0);
-//            printf("%d ",*theIterator);
+            printf("%d ",*theIterator);
         }
-//        printf("\n");
+        printf("\n");
         leftRightList.clear();
     }
     
@@ -201,14 +201,14 @@ int LinesDataHandle::LD_calcDisappear(int _type, const LinesProperty &start){
 //    CCLOG("leftup->rightdownlist:%d",leftupTorightdownlist.size());
     if (leftupTorightdownlist.size() >= 4) {
         count += 4;
-//        printf("start:");
+        printf("start leftup->rightdown:");
         std::list<int>::iterator theIterator;
         for (theIterator = leftupTorightdownlist.begin(); theIterator != leftupTorightdownlist.end();
              theIterator++) {
             LD_resetStateAtIndex(*theIterator, 0);
-//            printf("%d ",*theIterator);
+            printf("%d ",*theIterator);
         }
-//        printf("\n");
+        printf("\n");
         leftupTorightdownlist.clear();
     }
     
@@ -216,14 +216,14 @@ int LinesDataHandle::LD_calcDisappear(int _type, const LinesProperty &start){
 //    CCLOG("leftDown->RightUplist:%d",leftdownTorightup.size());
     if (leftdownTorightup.size() >= 4) {
         count +=4;
-//        printf("start:");
+        printf("start leftdown->rightUp:");
         std::list<int>::iterator theIterator;
         for (theIterator = leftdownTorightup.begin(); theIterator != leftdownTorightup.end();
              theIterator++) {
             LD_resetStateAtIndex(*theIterator, 0);
-//            printf("%d ",*theIterator);
+            printf("%d ",*theIterator);
         }
-//        printf("\n");
+        printf("\n");
         leftdownTorightup.clear();
     }
     

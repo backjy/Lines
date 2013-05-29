@@ -601,6 +601,7 @@ void CCNode::addChild(CCNode *child)
 
 void CCNode::removeFromParent()
 {
+    
     this->removeFromParentAndCleanup(true);
 }
 

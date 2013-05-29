@@ -71,7 +71,9 @@ bool LinesLayer::ccTouchBegan(CCTouch *pTouch, CCEvent *pEvent){
     if (_index>=0) {
         
         LinesProperty _pro = dataHandle->LD_convertIndexToLinesProperty(_index);
-        CCLog("x:%d,y:%d",_pro.x,_pro.y);
+//        CCLog("x:%d,y:%d",_pro.x,_pro.y);
+        
+        CCLOG("select property is :%d",dataHandle->LD_getStateAtIndex(_index));
         
         if (!dataHandle->LD_getStateAtIndex(_index)) {//如果返回是 false 就可以做move检查
             // do move to
@@ -188,7 +190,7 @@ void LinesLayer::LinesSpriteMoveEndDoCheck(){
                                              currentSelectSprite->s_property);
     if(count>1){
     
-        LL_clearupUnusedSprite();
+        LL_clearupUnusedSprite(count+1);
         dataHandle->LD_ShowDebug();
         totalscore += count;
         
@@ -203,28 +205,54 @@ void LinesLayer::LinesSpriteMoveEndDoCheck(){
     ll_canDoCheck = true;
 }
 
-void LinesLayer::LL_clearupUnusedSprite(){
+void LinesLayer::LL_clearupUnusedSprite(int count){
+    if (LL_clearupUnusedSpriteAd()!=count && count) {
+        LL_clearupUnusedSpriteAd();
+    }
+}
+
+int LinesLayer::LL_clearupUnusedSpriteAd(){
     
     currentSelectSprite = NULL;
     
     CCObject * _obj = NULL;
     
-    CCARRAY_FOREACH(linesSpriteParent->getChildren(), _obj){
+    int count = 0;
+    
+    
+    for (unsigned int i=0; i<linesSpriteParent->getChildrenCount(); i++) {
+        
+        _obj    = linesSpriteParent->getChildren()->objectAtIndex(i);
         
         LinesSprite * _sprite = dynamic_cast<LinesSprite*>(_obj);
         
-        if(!_sprite) {  printf("NULL"); continue;}
+        if(!_sprite) {  printf("The will disappear Sprite is NULL"); continue;}
         
         int _index = dataHandle->LD_getIndexAt(_sprite->s_property);
+        
+        if(_index<0 ){
+            CCLOG("error !!!!!!_index<0");
+        }
+        
         int _value = dataHandle->LD_getStateAtIndex(_index);
+        
+//        printf("%d,%d:%d-%d ",_sprite->s_property.x,_sprite->s_property.y,_index,_value);
         if (_value==0) {
             
             _sprite->LS_disappear();
-            printf("%d-%d ",_index,_value);
+            count++;
+//            printf("\n will disappear %d-%d \n",_index,_value);
         }
-        printf("%d,%d:%d-%d ",_sprite->s_property.x,_sprite->s_property.y,_index,_value);
     }
+    
+//    CCARRAY_FOREACH(linesSpriteParent->getChildren(), _obj){
+//        
+//        
+//        //        printf("%d,%d:%d-%d ",_sprite->s_property.x,_sprite->s_property.y,_index,_value);
+//    }
     printf("\n");
+    
+    return --count;
 }
 
 void LinesLayer::LL_doAddLinesSprite(){
@@ -251,7 +279,7 @@ void LinesLayer::LL_doAddLinesSprite(){
         dataHandle->LD_resetStateAtIndex(_index, sprite->type);
         
         if (dataHandle->LD_calcDisappear(sprite->type, sprite->s_property)) {
-            LL_clearupUnusedSprite();
+            LL_clearupUnusedSprite(0);
         }
         nextTypeArray[i] = arc4random() % 7;
     }

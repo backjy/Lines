@@ -63,7 +63,9 @@ public:
     
     void LL_doCheckMoveAndSoON(const LinesProperty &start);
     
-    void LL_clearupUnusedSprite();
+    void LL_clearupUnusedSprite(int count);
+    
+    int  LL_clearupUnusedSpriteAd();
     
     void LL_doAddLinesSprite();
     
